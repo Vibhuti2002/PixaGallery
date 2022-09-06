@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.HomeFragment"
+    android:layout_margin="2dp">
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/pixawall"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        />
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAppName"
+        android:layout_marginVertical="3dp"/>
+
+    <TextView
+        android:id="@+id/tvTrending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        android:text="Trending"
+        android:textSize="25sp"
+        android:layout_marginStart="3dp"
+        android:layout_marginVertical="3dp"
+        android:textColor="#515151"
+        android:fontFamily="@font/poppins"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTrending"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTrending"
+        android:layout_margin="3dp"/>
+
+    <TextView
+        android:id="@+id/tvColorTones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvTrending"
+        android:text="Color Tones"
+        android:textSize="25sp"
+        android:layout_marginStart="3dp"
+        android:textColor="#515151"
+        android:fontFamily="@font/poppins"
+        android:layout_marginVertical="3dp"/>
+
+    <View
+        android:id="@+id/viewOrange"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/color_shape"
+        android:backgroundTint="#FF6B00"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
+        android:layout_marginStart="3dp"/>
+
+    <View
+        android:id="@+id/viewYellow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/color_shape"
+        android:backgroundTint="#FFEC3F"
+        app:layout_constraintStart_toEndOf="@id/viewOrange"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
+        android:layout_marginStart="9dp"/>
+
+    <View
+        android:id="@+id/viewGreen"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/color_shape"
+        android:backgroundTint="#41FF48"
+        app:layout_constraintStart_toEndOf="@id/viewYellow"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
+        android:layout_marginStart="9dp"/>
+
+    <View
+        android:id="@+id/viewCyan"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/color_shape"
+        android:backgroundTint="#56FFF5"
+        app:layout_constraintStart_toEndOf="@id/viewGreen"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
+        android:layout_marginStart="9dp"/>
+
+    <View
+        android:id="@+id/viewBlue"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/color_shape"
+        android:backgroundTint="#4A46FF"
+        app:layout_constraintStart_toEndOf="@id/viewCyan"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
+        android:layout_marginStart="9dp"/>
+
+    <View
+        android:id="@+id/viewPurple"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/color_shape"
+        android:backgroundTint="#FF52F8"
+        app:layout_constraintStart_toEndOf="@id/viewBlue"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
+        android:layout_marginStart="9dp"/>
+
+    <View
+        android:id="@+id/viewRed"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/color_shape"
+        android:backgroundTint="#FF0000"
+        app:layout_constraintStart_toEndOf="@id/viewPurple"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
+        android:layout_marginStart="9dp"/>
+
+    <TextView
+        android:id="@+id/tvCategories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewYellow"
+        android:text="Categories"
+        android:textSize="25sp"
+        android:layout_marginStart="3dp"
+        android:textColor="#515151"
+        android:fontFamily="@font/poppins"
+        android:layout_marginVertical="3dp"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvNature"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="10dp"
+        android:background="@drawable/nature"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cvBackground"
+        app:layout_constraintTop_toBottomOf="@id/tvCategories"
+        android:padding="10dp"
+        android:layout_marginVertical="7dp"
+        android:layout_marginHorizontal="3dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/nature"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins"
+            android:text="Nature"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvBackground"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toEndOf="@id/cvNature"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCategories"
+        android:padding="10dp"
+        android:layout_marginVertical="7dp"
+        android:layout_marginHorizontal="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins"
+            android:text="Background"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvAnimals"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cvReligion"
+        app:layout_constraintTop_toBottomOf="@id/cvNature"
+        android:padding="10dp"
+        android:layout_marginVertical="7dp"
+        android:layout_marginHorizontal="3dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/animal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins"
+            android:text="Animals"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvReligion"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toEndOf="@id/cvAnimals"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvBackground"
+        android:padding="10dp"
+        android:layout_marginVertical="7dp"
+        android:layout_marginHorizontal="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/religion"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins"
+            android:text="Religion"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
