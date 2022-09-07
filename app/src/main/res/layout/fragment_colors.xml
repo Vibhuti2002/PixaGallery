@@ -5,29 +5,28 @@
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.CategoriesFragment"
     android:background="@color/white">
 
     <TextView
-        android:id="@+id/tvHead"
+        android:id="@+id/tvHeadColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nature"
+        android:text="Colors"
         android:textSize="35sp"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_semibold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="7dp"/>
 
 
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/rvCategories"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/tvHead"
-       />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeadColor"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

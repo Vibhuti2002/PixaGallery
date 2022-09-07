@@ -13,10 +13,53 @@
         <action
             android:id="@+id/action_homeFragment_to_categoriesFragment"
             app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_latestFragment"
+            app:destination="@id/latestFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_colorsFragment"
+            app:destination="@id/colorsFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.galleryapp.ui.fragments.CategoriesFragment"
         android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/fragment_categories" >
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="nature"/>
+        <action
+            android:id="@+id/action_categoriesFragment_to_fullImageFragment"
+            app:destination="@id/fullImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/latestFragment"
+        android:name="com.galleryapp.ui.fragments.LatestFragment"
+        android:label="LatestFragment" >
+        <action
+            android:id="@+id/action_latestFragment_to_fullImageFragment"
+            app:destination="@id/fullImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/colorsFragment"
+        android:name="com.galleryapp.ui.fragments.ColorsFragment"
+        android:label="ColorsFragment" >
+        <action
+            android:id="@+id/action_colorsFragment_to_fullImageFragment"
+            app:destination="@id/fullImageFragment" />
+        <argument
+            android:name="color"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullImageFragment"
+        android:name="com.galleryapp.ui.fragments.FullImageFragment"
+        android:label="fragment_full_image"
+        tools:layout="@layout/fragment_full_image" >
+        <argument
+            android:name="link"
+            app:argType="string"
+            android:defaultValue="https://pixabay.com/get/g61e8c9350555e3ae42943fd968ff5ea33d3744d65f30c4d1bcccadb74b19c66c943298be93c358ff26fa06a7d6dd87bd72e96c091471de44c7c67e04d4cb3ece_640.jpg"/>
+    </fragment>
 </navigation>

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.HomeFragment"
-    android:layout_margin="2dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    tools:context=".ui.fragments.HomeFragment">
 
     <TextView
         android:id="@+id/tvAppName"
@@ -13,157 +20,176 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/pixawall"
-        android:textSize="28sp"
+        android:textColor="@color/black"
+        android:textSize="38sp"
+        android:layout_marginVertical="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/black"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="5dp"
+        android:layout_marginVertical="3dp"
         android:background="@drawable/line"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvAppName"
-        android:layout_marginVertical="3dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAppName" />
 
-    <TextView
+<!--    <TextView
         android:id="@+id/tvTrending"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line"
-        android:text="Trending"
-        android:textSize="25sp"
-        android:layout_marginStart="3dp"
         android:layout_marginVertical="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins"
+        android:text="Trending"
         android:textColor="#515151"
-        android:fontFamily="@font/poppins"/>
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTrending"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="3dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTrending"
-        android:layout_margin="3dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTrending" />-->
 
     <TextView
         android:id="@+id/tvColorTones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rvTrending"
-        android:text="Color Tones"
-        android:textSize="25sp"
+        android:layout_marginVertical="8dp"
         android:layout_marginStart="3dp"
-        android:textColor="#515151"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/poppins"
-        android:layout_marginVertical="3dp"/>
+        android:text="Color Tones"
+        android:textColor="#515151"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
 
     <View
         android:id="@+id/viewOrange"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/color_shape"
         android:backgroundTint="#FF6B00"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toStartOf="@+id/viewYellow"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvColorTones"
-        android:layout_marginStart="3dp"/>
+         />
 
     <View
         android:id="@+id/viewYellow"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:focusable="true"
         android:background="@drawable/color_shape"
         android:backgroundTint="#FFEC3F"
-        app:layout_constraintStart_toEndOf="@id/viewOrange"
-        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
-        android:layout_marginStart="9dp"/>
+        app:layout_constraintEnd_toStartOf="@+id/viewGreen"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewOrange"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones" />
 
     <View
         android:id="@+id/viewGreen"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:focusable="true"
         android:background="@drawable/color_shape"
         android:backgroundTint="#41FF48"
-        app:layout_constraintStart_toEndOf="@id/viewYellow"
-        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
-        android:layout_marginStart="9dp"/>
+        app:layout_constraintEnd_toStartOf="@+id/viewCyan"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewYellow"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones" />
 
     <View
         android:id="@+id/viewCyan"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:focusable="true"
         android:background="@drawable/color_shape"
         android:backgroundTint="#56FFF5"
-        app:layout_constraintStart_toEndOf="@id/viewGreen"
-        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
-        android:layout_marginStart="9dp"/>
+        app:layout_constraintEnd_toStartOf="@+id/viewBlue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewGreen"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones" />
 
     <View
         android:id="@+id/viewBlue"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:focusable="true"
         android:background="@drawable/color_shape"
         android:backgroundTint="#4A46FF"
-        app:layout_constraintStart_toEndOf="@id/viewCyan"
-        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
-        android:layout_marginStart="9dp"/>
-
-    <View
-        android:id="@+id/viewPurple"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/color_shape"
-        android:backgroundTint="#FF52F8"
-        app:layout_constraintStart_toEndOf="@id/viewBlue"
-        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
-        android:layout_marginStart="9dp"/>
+        app:layout_constraintEnd_toStartOf="@+id/viewRed"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewCyan"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones" />
 
     <View
         android:id="@+id/viewRed"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:focusable="true"
         android:background="@drawable/color_shape"
         android:backgroundTint="#FF0000"
-        app:layout_constraintStart_toEndOf="@id/viewPurple"
-        app:layout_constraintTop_toBottomOf="@id/tvColorTones"
-        android:layout_marginStart="9dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viewBlue"
+        app:layout_constraintTop_toBottomOf="@id/tvColorTones" />
 
     <TextView
         android:id="@+id/tvCategories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewYellow"
-        android:text="Categories"
-        android:textSize="25sp"
-        android:layout_marginStart="3dp"
-        android:textColor="#515151"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="7dp"
         android:fontFamily="@font/poppins"
-        android:layout_marginVertical="3dp"
-        />
+        android:text="Categories"
+        android:textColor="#515151"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewYellow" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvNature"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
-        app:cardCornerRadius="10dp"
-        android:background="@drawable/nature"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/cvBackground"
-        app:layout_constraintTop_toBottomOf="@id/tvCategories"
-        android:padding="10dp"
+        android:layout_marginHorizontal="5dp"
         android:layout_marginVertical="7dp"
-        android:layout_marginHorizontal="3dp">
+        android:background="@drawable/nature"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toStartOf="@id/cvBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCategories">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/nature"/>
+            android:background="@drawable/nature" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -176,20 +202,21 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvBackground"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintStart_toEndOf="@id/cvNature"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCategories"
-        android:padding="10dp"
+        android:layout_marginHorizontal="3dp"
         android:layout_marginVertical="7dp"
-        android:layout_marginHorizontal="3dp">
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cvNature"
+        app:layout_constraintTop_toBottomOf="@id/tvCategories">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background"/>
+            android:background="@drawable/background" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -202,19 +229,21 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvAnimals"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/cvReligion"
-        app:layout_constraintTop_toBottomOf="@id/cvNature"
-        android:padding="10dp"
+        android:layout_marginHorizontal="3dp"
         android:layout_marginVertical="7dp"
-        android:layout_marginHorizontal="3dp">
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toStartOf="@id/cvReligion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvNature">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/animal"/>
+            android:background="@drawable/animal" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -227,20 +256,21 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvReligion"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintStart_toEndOf="@id/cvAnimals"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cvBackground"
-        android:padding="10dp"
+        android:layout_marginHorizontal="3dp"
         android:layout_marginVertical="7dp"
-        android:layout_marginHorizontal="3dp">
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cvAnimals"
+        app:layout_constraintTop_toBottomOf="@id/cvBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/religion"/>
+            android:background="@drawable/religion" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -250,4 +280,74 @@
             android:textColor="@color/white"
             android:textSize="18sp" />
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvPlaces"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="3dp"
+        android:layout_marginVertical="7dp"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toStartOf="@id/cvFood"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvAnimals">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/places" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins"
+            android:text="Places"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvFood"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="3dp"
+        android:layout_marginVertical="7dp"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cvPlaces"
+        app:layout_constraintTop_toBottomOf="@id/cvReligion">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/food" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins"
+            android:text="Food"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExplore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:text="Explore All"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvPlaces"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

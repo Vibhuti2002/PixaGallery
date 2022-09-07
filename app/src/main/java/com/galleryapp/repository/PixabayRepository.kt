@@ -8,4 +8,10 @@ class PixabayRepository {
 
     suspend fun getLatestImages() =
         RetrofitInstance.api.getLatestImages()
+
+    suspend fun getCategoryImages(category: String) =
+        RetrofitInstance.api.getCategoryImages(category)
+
+    suspend fun getColorImages(color: String) =
+        RetrofitInstance.api.getColorImages(color)
 }
