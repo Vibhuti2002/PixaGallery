@@ -58,7 +58,7 @@ class PixabayAdapter(private var imageListner : PixabayAdapter.OnImageClickListe
         override fun onClick(v: View?) {
             val position = adapterPosition
             val link = categoriesData[position].largeImageURL
-            Log.i("PRIYANSHU", "onClick: $link url ")
+           
             if (position!=RecyclerView.NO_POSITION) {
                 if (v != null) {
                     imageListner.onImageClick(link)
